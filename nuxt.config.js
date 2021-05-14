@@ -35,10 +35,16 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    // https://auth.nuxtjs.org/guide/setup
+    '@nuxtjs/auth-next'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    credentials: true,
+    baseURL: process.env.BASE_URL,
+    debug: process.env.DEBUG === 'true',
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -49,5 +55,20 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  // https://auth.nuxtjs.org/providers/laravel-sanctum
+  auth: {
+    strategies: {
+      laravelSanctum: {
+        provider: 'laravel/sanctum',
+        url: process.env.BASE_URL,
+      },
+    },
+  },
+
+  // https://auth.nuxtjs.org/guide/middleware
+  router: {
+    middleware: ['auth']
+  },
 }
