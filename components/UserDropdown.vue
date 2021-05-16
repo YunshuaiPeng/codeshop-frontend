@@ -20,11 +20,13 @@
           class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 focus:outline-none"
           role="menuitem" tabindex="-1" id="menu-item-2">个人中心</a>
         <form @submit.prevent="logout">
-          <button type="submit"
-            class="text-gray-700 block w-full text-left px-4 py-2 text-sm  hover:bg-gray-100 focus:outline-none"
-            role="menuitem" tabindex="-1" id="menu-item-3">
-            退出
-          </button>
+          <Loading :loading="loading">
+            <button type="submit"
+              class="text-gray-700 block w-full text-left px-4 py-2 text-sm  hover:bg-gray-100 focus:outline-none"
+              role="menuitem" tabindex="-1">
+              退出
+            </button>
+          </Loading>
         </form>
       </div>
     </div>
@@ -41,7 +43,8 @@
     },
     data() {
       return {
-        show: false
+        show: false,
+        loading: false
       }
     },
 
@@ -50,9 +53,12 @@
         this.show = !this.show
       },
       async logout() {
+        this.loading = true
         try {
           const response = await this.$auth.logout()
+          this.loading = false
         } catch (err) {
+          this.loading = false
         }
       },
     }

@@ -22,12 +22,12 @@
         </div>
       </div>
 
-      <div>
+      <Loading :loading="loading">
         <button type="submit"
           class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           登录
         </button>
-      </div>
+      </Loading>
 
       <div class="mt-4 text-red-500">
         <div v-for="(item, i) in errors" :key="i">
@@ -49,12 +49,14 @@
       return {
         email: 'admin@admin.com',
         password: '123456789',
-        errors: null
+        errors: null,
+        loading: false
       }
     },
 
     methods: {
       async login() {
+        this.loading = true
         try {
           const response = await this.$auth.loginWith('laravelSanctum', {
             data: {
@@ -62,9 +64,11 @@
               password: this.password,
             },
           })
+          this.loading = false
           this.$router.push('/')
         } catch (err) {
           console.log(err)
+          this.loading = false
           this.errors = err.response.data.errors
         }
       }
