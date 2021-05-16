@@ -75,6 +75,6 @@ export default {
 
   //https://nuxtjs.org/docs/2.x/features/loading
   loading: {
-    color: '#42946C'
+    color: '#3E3CC2'
   },
 }
