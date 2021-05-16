@@ -18,6 +18,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/clickaway',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -36,7 +37,7 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://auth.nuxtjs.org/guide/setup
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -49,7 +50,7 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
+      lang: 'zh'
     }
   },
 
@@ -70,5 +71,10 @@ export default {
   // https://auth.nuxtjs.org/guide/middleware
   router: {
     middleware: ['auth']
+  },
+
+  //https://nuxtjs.org/docs/2.x/features/loading
+  loading: {
+    color: '#42946C'
   },
 }
