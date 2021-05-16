@@ -3,7 +3,7 @@
     <div>
       <button type="button" @click="toggle"
         class="bg-gray-100 rounded-full flex items-center focus:outline-none focus:ring-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
-        id="menu-button" aria-expanded="true" aria-haspopup="true">
+        aria-expanded="true" aria-haspopup="true">
         <span class="sr-only">{{ auth.user.email }}</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -13,12 +13,15 @@
     </div>
 
     <div v-if="show" v-on-clickaway="toggle"
-      class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+      class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
       role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
       <div class="py-1" role="none">
-        <a href="#"
-          class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 focus:outline-none"
-          role="menuitem" tabindex="-1" id="menu-item-2">个人中心</a>
+        <div href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem"
+          tabindex="-1">{{ auth.user.email }}</div>
+      </div>
+      <div class="py-1" role="none">
+        <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 focus:outline-none" role="menuitem"
+          tabindex="-1">个人中心</a>
         <form @submit.prevent="logout">
           <Loading :loading="loading">
             <button type="submit"
