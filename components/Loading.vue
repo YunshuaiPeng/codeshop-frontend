@@ -17,7 +17,7 @@
   export default {
     computed: {
       loading() {
-        return this.$nuxt.$loading.show
+        return this.$nuxt && this.$nuxt.$loading && this.$nuxt.$loading.show
       }
     }
   }
