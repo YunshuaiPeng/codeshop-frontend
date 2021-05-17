@@ -19,7 +19,7 @@
       <NuxtLink to="/login"
         class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
         登录</NuxtLink>
-      <NuxtLink to="/"
+      <NuxtLink to="/register"
         class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
         注册</NuxtLink>
     </div>
