@@ -56,13 +56,12 @@
     methods: {
       async login() {
         try {
-          const response = await this.$auth.loginWith('laravelSanctum', {
+          await this.$auth.loginWith('laravelSanctum', {
             data: {
               email: this.email,
               password: this.password,
             },
           })
-          this.$router.push('/')
         } catch (err) {
           this.errors = err.response.data.errors
         }
