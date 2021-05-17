@@ -15,11 +15,10 @@
 
 <script>
   export default {
-    props: {
-      loading: {
-        type: Boolean,
-        default: false,
-      },
-    },
+    computed: {
+      loading() {
+        return this.$nuxt.$loading.show
+      }
+    }
   }
 </script>
