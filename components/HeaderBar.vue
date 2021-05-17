@@ -16,12 +16,12 @@
       <Avatar />
     </div>
     <div v-else class="flex items-center justify-between space-x-4">
-      <nuxt-link to="/login"
+      <NuxtLink to="/login"
         class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-        登录</nuxt-link>
-      <nuxt-link to="/"
+        登录</NuxtLink>
+      <NuxtLink to="/"
         class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-        注册</nuxt-link>
+        注册</NuxtLink>
     </div>
   </header>
 </template>
