@@ -11,7 +11,7 @@
         邮箱未验证
       </h2>
       <p class="mt-2 text-sm text-gray-500">
-        您看到这个页面，是因为您的电子邮件还没有验证，验证连接已经发送到{{ auth.user.email }}，请查收。如果您没有收到邮件，点击下方的按钮，我们会重新给您发送一封邮件。
+        邮箱验证连接已经发送到 <strong>{{ auth.user.email }}</strong>，请查收。如果没有收到邮件，点击下方的按钮重新发送。
       </p>
       <form class="space-y-6 mt-8" @submit.prevent="resend">
         <Loading>
