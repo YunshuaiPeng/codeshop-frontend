@@ -50,7 +50,7 @@
               this.text = "您的邮箱已验证，无需操作"
               break;
             case 202:
-              this.text = "已发送"
+              this.text = "已发送(点击再次发送)"
               break;
           }
         } catch (error) {
