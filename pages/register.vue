@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-md mx-auto mt-20">
+  <div class="max-w-md mx-auto mt-16">
     <form class="space-y-6" @submit.prevent="register">
       <div>
         <label for="name" class="block text-sm font-medium">

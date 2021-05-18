@@ -70,7 +70,10 @@ export default {
 
   // https://auth.nuxtjs.org/guide/middleware
   router: {
-    middleware: ['auth']
+    middleware: [
+      'auth',
+      'email-verify',
+    ]
   },
 
   //https://nuxtjs.org/docs/2.x/features/loading
