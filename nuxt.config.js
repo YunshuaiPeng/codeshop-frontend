@@ -18,6 +18,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    // 对 axios 做一些工作，例如增加拦截器，处理错误等
+    '~/plugins/axios',
     '~/plugins/clickaway',
   ],
 

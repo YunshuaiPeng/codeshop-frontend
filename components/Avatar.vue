@@ -16,14 +16,14 @@
       class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
       role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
       <div class="py-1" role="none">
-        <div href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem"
-          tabindex="-1">{{ auth.user.email }}</div>
+        <div href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1">{{ auth.user.email }}
+        </div>
       </div>
       <div class="py-1" role="none">
         <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 focus:outline-none" role="menuitem"
           tabindex="-1">个人中心</a>
         <form @submit.prevent="logout">
-          <Loading :loading="loading">
+          <Loading>
             <button type="submit"
               class="text-gray-700 block w-full text-left px-4 py-2 text-sm  hover:bg-gray-100 focus:outline-none"
               role="menuitem" tabindex="-1">
@@ -47,7 +47,6 @@
     data() {
       return {
         show: false,
-        loading: false
       }
     },
 
@@ -56,12 +55,9 @@
         this.show = !this.show
       },
       async logout() {
-        this.loading = true
         try {
           const response = await this.$auth.logout()
-          this.loading = false
         } catch (err) {
-          this.loading = false
         }
       },
     }
