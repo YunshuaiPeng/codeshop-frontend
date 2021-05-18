@@ -8,7 +8,7 @@
     </div>
     <div class="mt-8">
       <h2 class="text-lg font-medium">
-        邮箱未验证
+        请验证您的邮箱
       </h2>
       <p class="mt-2 text-sm text-gray-500">
         邮箱验证连接已经发送到 <strong>{{ auth.user.email }}</strong>，请查收。如果没有收到邮件，点击下方的按钮重新发送。
