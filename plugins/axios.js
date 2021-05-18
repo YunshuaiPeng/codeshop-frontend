@@ -5,7 +5,7 @@ export default function({ $axios, redirect, store }) {
   $axios.onResponse(response => {
     store.commit('loading/decrement')
   })
-  $axios.onError(err => {
+  $axios.onError(error => {
     store.commit('loading/decrement')
   })
 }

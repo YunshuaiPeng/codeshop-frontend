@@ -88,8 +88,8 @@
           })
           await this.$auth.setUserToken(true)
           await this.$router.push('/')
-        } catch (err) {
-          this.errors = err.response.data.errors
+        } catch (error) {
+          this.errors = error.response.data.errors
         }
       }
     },

@@ -57,7 +57,7 @@
       async logout() {
         try {
           const response = await this.$auth.logout()
-        } catch (err) {
+        } catch (error) {
         }
       },
     }

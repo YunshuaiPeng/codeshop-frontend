@@ -62,8 +62,8 @@
               password: this.password,
             },
           })
-        } catch (err) {
-          this.errors = err.response.data.errors
+        } catch (error) {
+          this.errors = error.response.data.errors
         }
       }
     },
