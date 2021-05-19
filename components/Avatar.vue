@@ -90,7 +90,7 @@
 
     watch: {
       $route(to, from) {
-        this.toggle();
+        this.show = false
       }
     },
 
