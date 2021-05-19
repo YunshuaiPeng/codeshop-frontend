@@ -1,6 +1,6 @@
 <template>
-  <div class="relative">
-    <div v-if="loading.count > 0"
+  <div ref="loading" class="relative">
+    <div v-if="showAnimateSpin"
       class="absolute inset-0 w-full h-full flex items-center justify-center z-10 bg-white opacity-75">
       <svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -18,7 +18,16 @@
 
   export default {
     computed: {
-      ...mapState(['loading']),
+      ...mapState({
+        count: state => state.loading.count,
+        target: state => state.loading.target
+      }),
+      showAnimateSpin() {
+        return this.count > 0 && this.containsTarget
+      },
+      containsTarget() {
+        return this.$refs.loading.contains(this.target)
+      },
     }
   }
 </script>
