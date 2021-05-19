@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-md mx-auto mt-16">
+  <div class="max-w-md mx-auto mt-8 sm:mt-16">
     <Loading>
       <div v-if="verified">
         <div class="text-green-600">

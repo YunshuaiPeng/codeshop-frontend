@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-md mx-auto mt-16">
+  <div class="max-w-md mx-auto mt-8 sm:mt-16">
     <div class="text-yellow-600">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

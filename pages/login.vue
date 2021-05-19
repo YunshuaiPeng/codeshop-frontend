@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-md mx-auto mt-16">
+  <div class="max-w-md mx-auto mt-8 sm:mt-16">
     <form class="space-y-6" @submit.prevent="login">
       <div>
         <label for="email" class="block text-sm font-medium">
