@@ -22,6 +22,20 @@
         </div>
       </div>
 
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <input v-model="remember_me" id="remember_me" name="remember_me" type="checkbox"
+            class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+          <label for="remember_me" class="ml-2 block text-sm text-gray-900">
+            记住我
+          </label>
+        </div>
+
+        <div class="text-sm">
+          <!-- 忘记密码 -->
+        </div>
+      </div>
+
       <Loading>
         <button type="submit"
           class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -48,6 +62,7 @@
       return {
         email: 'admin@admin.com',
         password: '123456789',
+        remember_me: false,
         errors: null,
       }
     },
@@ -59,6 +74,7 @@
             data: {
               email: this.email,
               password: this.password,
+              remember_me: this.remember_me,
             },
           })
         } catch (error) {
