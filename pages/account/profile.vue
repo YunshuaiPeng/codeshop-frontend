@@ -55,7 +55,7 @@
   export default {
     data() {
       return {
-        user: _.cloneDeep(this.$store.state.auth.user),
+        user: _.cloneDeep(this.$auth.user),
         errors: null,
       }
     },
