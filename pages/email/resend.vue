@@ -29,6 +29,14 @@
   import { mapState } from 'vuex'
 
   export default {
+    beforeRouteEnter(to, from, next) {
+      next(vm => {
+        if (vm.$auth.user.email_verified_at) {
+          vm.$router.push('/account/profile')
+        }
+      })
+    },
+
     data() {
       return {
         text: '重新发送邮箱验证连接',
