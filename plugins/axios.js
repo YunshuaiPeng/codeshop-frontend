@@ -10,6 +10,10 @@ export default function({ $axios, redirect, store }) {
 
     const code = error.response.status
     switch (code) {
+      case 401:
+        window.location.reload()
+        redirect('login')
+        break
       case 419:
         redirect('login')
         break
