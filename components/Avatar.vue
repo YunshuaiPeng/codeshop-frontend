@@ -32,14 +32,14 @@
         </div>
         <div class="pt-1">
           <div class="flex justify-center items-center space-x-2">
-            <NuxtLink title="自定义个人资料" to="/profile/info" class="rounded-full border border-gray-300 p-1">
+            <NuxtLink title="自定义个人资料" to="/account/profile" class="rounded-full border border-gray-300 p-1">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
               </svg>
             </NuxtLink>
-            <NuxtLink title="密码" to="/profile/password" class="rounded-full border border-gray-300 p-1">
+            <NuxtLink title="密码" to="/account/password" class="rounded-full border border-gray-300 p-1">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

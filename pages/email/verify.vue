@@ -15,6 +15,21 @@
             邮箱已验证
           </h2>
         </div>
+
+        <div class="mt-8">
+          <div class="flex space-x-3">
+            <NuxtLink to="/account/profile"
+              class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 md:focus:ring-offset-indigo-500">
+              去首页</NuxtLink>
+            <NuxtLink to="/account/profile"
+              class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 md:focus:ring-offset-indigo-500">
+              前往个人中心</NuxtLink>
+          </div>
+          <!--  <button type="button"
+            class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            前往个人中心
+          </button> -->
+        </div>
       </div>
     </Loading>
   </div>
