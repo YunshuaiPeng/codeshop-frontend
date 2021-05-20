@@ -2,16 +2,6 @@
   <div class="max-w-md mx-auto mt-8 sm:mt-16">
     <form class="space-y-6" @submit.prevent="register">
       <div>
-        <label for="name" class="block text-sm font-medium">
-          昵称
-        </label>
-        <div class="mt-1">
-          <input v-model="name" id="name" name="name" type="text" required=""
-            class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
-        </div>
-      </div>
-
-      <div>
         <label for="email" class="block text-sm font-medium">
           邮箱
         </label>
@@ -68,7 +58,6 @@
 
     data() {
       return {
-        name: null,
         email: null,
         password: null,
         password_confirmation: null,
@@ -81,7 +70,6 @@
         try {
           await this.$axios.get('/sanctum/csrf-cookie')
           await this.$axios.post('/register', {
-            name: this.name,
             email: this.email,
             password: this.password,
             password_confirmation: this.password_confirmation,
