@@ -89,7 +89,5 @@ export default {
   },
 
   //https://nuxtjs.org/docs/2.x/features/loading
-  loading: {
-    color: '#3E3CC2'
-  },
+  loading: false
 }
