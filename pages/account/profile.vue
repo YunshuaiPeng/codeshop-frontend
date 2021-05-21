@@ -1,12 +1,7 @@
 <template>
   <form @submit.prevent="update">
-    <div class="shadow sm:rounded-md sm:overflow-hidden">
+    <div class="border border-gray-300 sm:rounded-md sm:overflow-hidden">
       <div class="bg-white py-6 px-4 space-y-6 sm:p-6">
-        <div>
-          <h3 class="text-lg leading-6 font-medium">修改个人信息</h3>
-          <p class="mt-1 text-sm text-gray-500"></p>
-        </div>
-
         <div class="grid grid-cols-3 gap-6">
           <div class="col-span-3 sm:col-span-2">
             <label for="name" class="block text-sm font-medium text-gray-700">
@@ -29,7 +24,7 @@
           </div>
         </div>
 
-        <div class="mt-4 text-red-500">
+        <div v-if="errors" class="mt-4 text-red-500">
           <div v-for="(item, i) in errors" :key="i">
             <div v-for="(error, j) in item" :key="j">
               {{ error }}
