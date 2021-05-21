@@ -1,6 +1,12 @@
 import { mixin as clickaway } from 'vue-clickaway'
 import Vue from 'vue'
 
-Vue.mixin({
-  mixins: [clickaway],
-})
+if (!Vue.__clickaway_mixin__) {
+  Vue.__clickaway_mixin__ = true
+
+  Vue.mixin({
+    mixins: [clickaway],
+  })
+}
+
+

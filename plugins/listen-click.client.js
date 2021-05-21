@@ -22,7 +22,11 @@ export default function({ store }) {
     }
   }
 
-  Vue.mixin({
-    mixins: [mixin]
-  })
+  if (!Vue.__listen_click_mixin__) {
+    Vue.__listen_click_mixin__ = true
+
+    Vue.mixin({
+      mixins: [mixin]
+    })
+  }
 }
