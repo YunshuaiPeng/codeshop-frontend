@@ -40,7 +40,7 @@
         </button>
       </Loading>
 
-      <div class="mt-4 text-red-500">
+      <div v-if="errors" class="mt-4 text-red-500">
         <div v-for="(item, i) in errors" :key="i">
           <div v-for="(error, j) in item" :key="j">
             {{ error }}
