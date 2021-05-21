@@ -19,8 +19,8 @@
   export default {
     computed: {
       ...mapState({
-        count: state => state.loading.count,
-        target: state => state.loading.target
+        count: state => state.request.count,
+        target: state => state.request.target
       }),
       showAnimateSpin() {
         return this.count > 0 && this.containsTarget

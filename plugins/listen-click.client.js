@@ -5,7 +5,7 @@ export default function({ store }) {
     // 如果 event.target 是一个很大的对象(例如 html)
     // vue 会报错：Maximum call stack size exceeded
     try {
-      store.commit('loading/setTarget', {
+      store.commit('request/setTarget', {
         target: event.target
       })
     } catch (error) {

@@ -1,7 +1,7 @@
 export const state = () => ({
   // 请求数
   count: 0,
-  // 最后一次点击的 button 或 a
+  // 最后一次点击的元素，通常是 button
   // 为了判断请求是由点击哪个标签发起的
   target: null,
 })

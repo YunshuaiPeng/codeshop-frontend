@@ -1,12 +1,12 @@
 export default function({ $axios, redirect, store }) {
   $axios.onRequest(config => {
-    store.commit('loading/debounceIncrement')
+    store.commit('request/debounceIncrement')
   })
   $axios.onResponse(response => {
-    store.commit('loading/decrement')
+    store.commit('request/decrement')
   })
   $axios.onError(error => {
-    store.commit('loading/reset')
+    store.commit('request/reset')
 
     const code = error.response.status
     switch (code) {
