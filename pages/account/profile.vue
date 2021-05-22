@@ -69,6 +69,8 @@
 
           this.$auth.setUser(data)
 
+          this.$toast.success("保存成功");
+
           if (!this.$auth.user.email_verified_at) {
             this.$router.push('/email/resend')
           }

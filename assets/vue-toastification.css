@@ -1,0 +1,48 @@
+/* https://github.com/Maronato/vue-toastification#injecting-the-toast-css */
+@media only screen and (max-width: 600px){
+  .Vue-Toastification__container {
+    padding: 1rem !important;
+  }
+  .Vue-Toastification__toast {
+    border-radius: 6px !important;
+  }
+}
+
+.Vue-Toastification__close-button {
+  color: #212936 !important;
+  outline: none !important;
+}
+
+.Vue-Toastification__close-button:focus {
+  outline: none !important;
+}
+
+.Vue-Toastification__progress-bar {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  height: 3px !important;
+}
+
+.Vue-Toastification__toast--default,
+.Vue-Toastification__toast--info,
+.Vue-Toastification__toast--success,
+.Vue-Toastification__toast--warning,
+.Vue-Toastification__toast--error {
+  background-color: white !important;
+  color: #212936 !important;
+}
+
+.Vue-Toastification__toast--default svg {
+  color: #3E3CC2 !important;
+}
+.Vue-Toastification__toast--info svg {
+  color: #2563eb !important;
+}
+.Vue-Toastification__toast--success svg {
+  color: #059669 !important;
+}
+.Vue-Toastification__toast--warning svg {
+  color: #d97706 !important;
+}
+.Vue-Toastification__toast--error svg {
+  color: #dc2626 !important;
+}

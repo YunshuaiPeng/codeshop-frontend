@@ -16,6 +16,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/vue-toastification.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -44,6 +45,8 @@ export default {
     '@nuxtjs/pwa',
     // https://auth.nuxtjs.org/guide/setup
     '@nuxtjs/auth-next',
+    // https://github.com/Maronato/vue-toastification#nuxt-registration
+    'vue-toastification/nuxt',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -88,6 +91,12 @@ export default {
     ]
   },
 
-  //https://nuxtjs.org/docs/2.x/features/loading
-  loading: false
+  // https://nuxtjs.org/docs/2.x/features/loading
+  loading: false,
+
+  // transition: "Vue-Toastification__bounce",
+  toast: {
+    transition: "Vue-Toastification__fade",
+    hideProgressBar: false
+  }
 }

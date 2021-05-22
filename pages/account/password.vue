@@ -8,8 +8,7 @@
               当前密码
             </label>
             <div class="mt-1">
-              <input v-model="current_password" id="current_password" name="current_password" type="text"
-                required=""
+              <input v-model="current_password" id="current_password" name="current_password" type="text" required=""
                 class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
             </div>
           </div>
@@ -71,11 +70,12 @@
     methods: {
       async update() {
         try {
-          const { data } = await this.$axios.put('/api/password', {
+          await this.$axios.put('/api/password', {
             current_password: this.current_password,
             password: this.password,
             password_confirmation: this.password_confirmation,
           })
+          this.$toast.success("保存成功");
         } catch (error) {
           this.errors = error.response.data.errors
         }
