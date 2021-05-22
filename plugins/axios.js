@@ -1,6 +1,6 @@
 export default function({ $axios, redirect, store }) {
   $axios.onRequest(config => {
-    store.commit('request/debounceIncrement')
+    store.commit('request/increment')
   })
   $axios.onResponse(response => {
     store.commit('request/decrement')

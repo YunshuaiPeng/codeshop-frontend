@@ -6,14 +6,12 @@ export const state = () => ({
   target: null,
 })
 
-const debounceIncrement = _.debounce((state) => {
-  state.count++
-}, 1000, { leading: true, trailing: false })
-
 export const mutations = {
-  debounceIncrement,
+  increment(state) {
+    state.count++
+  },
   decrement(state) {
-    state.count == 0 ? 0 : state.count--
+    state.count--
   },
   reset(state) {
     state.count = 0
