@@ -5,6 +5,7 @@
   }
   .Vue-Toastification__toast {
     border-radius: 6px !important;
+    min-width: 280px !important;
   }
 }
 
@@ -14,8 +15,6 @@
 
 .Vue-Toastification__toast {
   overflow: visible !important;
-  width: 100% !important;
-  min-width: 280px !important;
 }
 
 .Vue-Toastification__close-button {
