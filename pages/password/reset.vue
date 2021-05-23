@@ -1,15 +1,16 @@
 <template>
   <div class="max-w-md mx-auto mt-8 sm:mt-16">
     <h2 class="my-6 text-3xl font-extrabold text-gray-900">
-      登录
+      重置密码
     </h2>
-    <form class="space-y-6" @submit.prevent="login">
+    <form class="space-y-6" @submit.prevent="reset">
       <div>
         <label for="email" class="block text-sm font-medium">
           邮箱
         </label>
         <div class="mt-1">
           <input v-model="email" id="email" name="email" type="email" autocomplete="email" required=""
+            disabled="disabled"
             class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
         </div>
       </div>
@@ -25,19 +26,14 @@
         </div>
       </div>
 
-      <div class="flex items-center justify-between">
-        <div class="flex items-center">
-          <input v-model="remember_me" id="remember_me" name="remember_me" type="checkbox"
-            class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-          <label for="remember_me" class="ml-2 block text-sm text-gray-900">
-            记住我
-          </label>
-        </div>
-
-        <div class="text-sm">
-          <NuxtLink to="/password/forgot" class="font-medium text-indigo-600">
-            忘记密码？
-          </NuxtLink>
+      <div>
+        <label for="password_confirmation" class="block text-sm font-medium text-gray-700">
+          确认密码
+        </label>
+        <div class="mt-1">
+          <input v-model="password_confirmation" id="password_confirmation" name="password_confirmation" type="password"
+            required=""
+            class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
         </div>
       </div>
 
@@ -57,22 +53,29 @@
 
     data() {
       return {
-        email: 'admin@admin.com',
-        password: '123456789',
-        remember_me: false,
-        errors: null,
+        email: this.$route.query.email,
+        password: null,
+        password_confirmation: null,
+        token: this.$route.query.token,
       }
     },
 
     methods: {
-      async login() {
+      async reset() {
+        await this.$axios.post('/password/reset', {
+          email: this.email,
+          password: this.password,
+          password_confirmation: this.password_confirmation,
+          token: this.token,
+        })
+        this.$toast.success('密码重置成功')
         await this.$auth.loginWith('laravelSanctum', {
           data: {
             email: this.email,
             password: this.password,
-            remember_me: this.remember_me,
           },
         })
+        this.$router.push('/account/profile')
       }
     },
   }
