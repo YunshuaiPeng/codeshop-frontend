@@ -1,4 +1,4 @@
-import ResponseToast from "@/components/response/Toast.vue"
+import ResponseToast from "@/components/ResponseToast.vue"
 
 export default function({ $axios, redirect, store, $toast }) {
   $axios.onRequest(config => {

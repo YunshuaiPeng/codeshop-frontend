@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="font-semibold text-sm">{{ response.status }} {{ response.statusText }}</div>
-    <component v-bind:is="currentComponent" v-if="response.data" :data="response.data"></component>
+    <div class="text-xs mt-2">
+      <pre style="white-space: pre-wrap; word-wrap: break-word;">{{ response.data }}</pre>
+    </div>
   </div>
 </template>
 
@@ -12,12 +14,6 @@
         type: Object,
         required: true
       }
-    },
-
-    computed: {
-      currentComponent() {
-        return `Response${this.response.status}`
-      },
     },
   }
 </script>
