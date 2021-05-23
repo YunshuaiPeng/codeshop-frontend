@@ -46,7 +46,7 @@
 </script>
 
 
-<style>
+<style scoped>
   .nuxt-link-exact-active {
     color: #4B4ADC;
   }
