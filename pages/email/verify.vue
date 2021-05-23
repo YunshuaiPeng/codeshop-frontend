@@ -25,10 +25,6 @@
               class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 md:focus:ring-offset-indigo-500">
               前往个人中心</NuxtLink>
           </div>
-          <!--  <button type="button"
-            class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            前往个人中心
-          </button> -->
         </div>
       </div>
     </Loading>
@@ -60,14 +56,10 @@
 
         if (this.auth.user.email_verified_at) return
 
-        try {
-          const { data } = await this.$axios.get(link)
+        const { data } = await this.$axios.get(link)
 
-          // 验证邮箱之后更新用户，主要是为了填充 email_verified_at 字段
-          this.$auth.setUser(data)
-        } catch (error) {
-          console.log(error)
-        }
+        // 验证邮箱之后更新用户，主要是为了填充 email_verified_at 字段
+        this.$auth.setUser(data)
       },
     }
   }

@@ -8,7 +8,7 @@
               当前密码
             </label>
             <div class="mt-1">
-              <input v-model="current_password" id="current_password" name="current_password" type="text" required=""
+              <input v-model="current_password" id="current_password" name="current_password" type="password" required=""
                 class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
             </div>
           </div>
@@ -18,7 +18,7 @@
               密码
             </label>
             <div class="mt-1">
-              <input v-model="password" id="password" name="password" type="text" required=""
+              <input v-model="password" id="password" name="password" type="password" required=""
                 class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
             </div>
           </div>
@@ -29,17 +29,9 @@
             <div class="mt-1">
               <div class="mt-1">
                 <input v-model="password_confirmation" id="password_confirmation" name="password_confirmation"
-                  type="text" required=""
+                  type="password" required=""
                   class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="errors" class="mt-4 text-red-500">
-          <div v-for="(item, i) in errors" :key="i">
-            <div v-for="(error, j) in item" :key="j">
-              {{ error }}
             </div>
           </div>
         </div>
@@ -63,22 +55,17 @@
         current_password: null,
         password: null,
         password_confirmation: null,
-        errors: null,
       }
     },
 
     methods: {
       async update() {
-        try {
-          await this.$axios.put('/api/password', {
-            current_password: this.current_password,
-            password: this.password,
-            password_confirmation: this.password_confirmation,
-          })
-          this.$toast.success("保存成功");
-        } catch (error) {
-          this.errors = error.response.data.errors
-        }
+        await this.$axios.put('/api/password', {
+          current_password: this.current_password,
+          password: this.password,
+          password_confirmation: this.password_confirmation,
+        })
+        this.$toast.success("保存成功");
       }
     }
   }

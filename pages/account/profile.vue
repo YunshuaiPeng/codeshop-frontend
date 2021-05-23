@@ -23,14 +23,6 @@
             </div>
           </div>
         </div>
-
-        <div v-if="errors" class="mt-4 text-red-500">
-          <div v-for="(item, i) in errors" :key="i">
-            <div v-for="(error, j) in item" :key="j">
-              {{ error }}
-            </div>
-          </div>
-        </div>
       </div>
       <div class="px-4 py-3 bg-gray-100 sm:px-6">
         <Loading class="w-16">
@@ -51,7 +43,6 @@
     data() {
       return {
         user: _.cloneDeep(this.$auth.user),
-        errors: null,
       }
     },
 
@@ -61,21 +52,17 @@
 
     methods: {
       async update() {
-        try {
-          const { data } = await this.$axios.put('/api/user', {
-            name: this.user.name,
-            email: this.user.email,
-          })
+        const { data } = await this.$axios.put('/api/user', {
+          name: this.user.name,
+          email: this.user.email,
+        })
 
-          this.$auth.setUser(data)
+        this.$auth.setUser(data)
 
-          this.$toast.success("保存成功");
+        this.$toast.success("保存成功");
 
-          if (!this.$auth.user.email_verified_at) {
-            this.$router.push('/email/resend')
-          }
-        } catch (error) {
-          this.errors = error.response.data.errors
+        if (!this.$auth.user.email_verified_at) {
+          this.$router.push('/email/resend')
         }
       }
     }

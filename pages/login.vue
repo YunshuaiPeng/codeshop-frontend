@@ -45,14 +45,6 @@
           确认
         </button>
       </Loading>
-
-      <div v-if="errors" class="mt-4 text-red-500">
-        <div v-for="(item, i) in errors" :key="i">
-          <div v-for="(error, j) in item" :key="j">
-            {{ error }}
-          </div>
-        </div>
-      </div>
     </form>
   </div>
 </template>
@@ -72,17 +64,13 @@
 
     methods: {
       async login() {
-        try {
-          await this.$auth.loginWith('laravelSanctum', {
-            data: {
-              email: this.email,
-              password: this.password,
-              remember_me: this.remember_me,
-            },
-          })
-        } catch (error) {
-          this.errors = error.response.data.errors
-        }
+        await this.$auth.loginWith('laravelSanctum', {
+          data: {
+            email: this.email,
+            password: this.password,
+            remember_me: this.remember_me,
+          },
+        })
       }
     },
   }

@@ -97,6 +97,7 @@ export default {
   // transition: "Vue-Toastification__bounce",
   toast: {
     transition: "Vue-Toastification__fade",
-    hideProgressBar: false
+    hideProgressBar: false,
+    showCloseButtonOnHover: true,
   }
 }

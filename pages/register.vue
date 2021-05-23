@@ -42,14 +42,6 @@
           确认
         </button>
       </Loading>
-
-      <div v-if="errors" class="mt-4 text-red-500">
-        <div v-for="(item, i) in errors" :key="i">
-          <div v-for="(error, j) in item" :key="j">
-            {{ error }}
-          </div>
-        </div>
-      </div>
     </form>
   </div>
 </template>
@@ -70,18 +62,14 @@
 
     methods: {
       async register() {
-        try {
-          await this.$axios.get('/sanctum/csrf-cookie')
-          await this.$axios.post('/register', {
-            email: this.email,
-            password: this.password,
-            password_confirmation: this.password_confirmation,
-          })
-          await this.$auth.setUserToken(true)
-          await this.$router.push('/')
-        } catch (error) {
-          this.errors = error.response.data.errors
-        }
+        await this.$axios.get('/sanctum/csrf-cookie')
+        await this.$axios.post('/register', {
+          email: this.email,
+          password: this.password,
+          password_confirmation: this.password_confirmation,
+        })
+        await this.$auth.setUserToken(true)
+        await this.$router.push('/')
       }
     },
   }
