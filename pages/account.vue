@@ -39,7 +39,9 @@
   export default {
     beforeRouteEnter(to, from, next) {
       next(vm => {
-        vm.$router.push('/account/profile')
+        if (to.name == 'account') {
+          vm.$router.push('/account/profile')
+        }
       })
     },
   }
@@ -50,4 +52,5 @@
   .nuxt-link-exact-active {
     color: #4B4ADC;
   }
+
 </style>
