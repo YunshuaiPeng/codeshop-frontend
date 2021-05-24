@@ -2,7 +2,7 @@
   <div>
     <div class="font-semibold text-sm">{{ response.status }} {{ response.statusText }}</div>
     <div class="text-xs mt-2">
-      <pre style="white-space: pre-wrap; word-wrap: break-word;">{{ response.data }}</pre>
+      <pre style="white-space: pre-wrap; word-break: break-all;">{{ response.data }}</pre>
     </div>
   </div>
 </template>
