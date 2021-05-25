@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-800 mb-16">
     <headerBar />
     <Nuxt />
   </div>

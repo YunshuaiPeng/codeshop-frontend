@@ -1,9 +1,9 @@
 <template>
   <header class="h-16 flex items-center justify-between">
-    <a href="/" class="block flex items-center justify-between space-x-4">
+    <NuxtLink to="/" class="block flex items-center justify-between space-x-4">
       <Logo class="w-8 h-8 text-indigo-700" />
       <h1 class="text-sm sm:text-lg font-semibold">CodeShop</h1>
-    </a>
+    </NuxtLink>
     <div v-if="auth.loggedIn" class="flex items-center justify-between space-x-6">
       <div>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
