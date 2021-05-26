@@ -82,7 +82,7 @@
         </div>
         <div class="flex justify-end mt-6">
           <button
-            class="w-30 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">加入购物车</button>
+            class="w-full md:w-32 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">加入购物车</button>
         </div>
       </div>
     </div>
@@ -102,16 +102,13 @@
       </nav>
 
       <div v-if="currentTabName == 'desktop'">
-        <div v-for="(src,index) in desktopPreview" :key="index" class="rounded-xl bg-gray-200 p-8 md:p-16 mb-6">
-          <img :src="src" :alt="product.name" class="rounded-xl">
-        </div>
+        <img v-for="(src,index) in desktopPreview" :key="index" :src="src" :alt="product.name"
+          class="rounded-xl bg-gray-200 p-8 md:p-16 mb-6">
       </div>
 
       <div v-if="currentTabName == 'mobile'">
-        <div v-for="(src,index) in mobilePreview" :key="index"
+        <img v-for="(src,index) in mobilePreview" :key="index" :src="src" :alt="product.name"
           class="rounded-xl bg-gray-200 p-8 mb-6 w-full md:w-96 mx-auto">
-          <img :src="src" :alt="product.name" class="rounded-xl">
-        </div>
       </div>
     </div>
   </div>
