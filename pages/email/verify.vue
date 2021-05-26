@@ -19,10 +19,10 @@
         <div class="mt-8">
           <div class="flex space-x-3">
             <NuxtLink to="/account/profile"
-              class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 md:focus:ring-offset-indigo-500">
+              class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 md:focus:ring-offset-blue-400">
               去首页</NuxtLink>
             <NuxtLink to="/account/profile"
-              class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 md:focus:ring-offset-indigo-500">
+              class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 md:focus:ring-offset-blue-400">
               前往个人中心</NuxtLink>
           </div>
         </div>

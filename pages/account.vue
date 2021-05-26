@@ -50,7 +50,7 @@
 
 <style scoped>
   .nuxt-link-exact-active {
-    color: #4B4ADC;
+    color: #4B82EE;
   }
 
 </style>

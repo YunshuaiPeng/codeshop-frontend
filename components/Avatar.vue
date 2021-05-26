@@ -2,7 +2,7 @@
   <div class="relative inline-block text-left">
     <div>
       <button type="button" @click="toggle"
-        class="bg-gray-100 rounded-full flex items-center focus:outline-none focus:ring-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+        class="bg-gray-100 rounded-full flex items-center focus:outline-none focus:ring-2 focus:ring-offset-gray-100 focus:ring-blue-400"
         aria-expanded="true" aria-haspopup="true">
         <span class="sr-only">{{ auth.user.name || auth.user.email }}</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
