@@ -13,7 +13,7 @@
     </div>
 
     <div v-if="show" v-on-clickaway="toggle"
-      class="origin-top-right absolute right-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
+      class="origin-top-right absolute right-0 z-50 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
       role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
       <div class="h-20 bg-gray-200"></div>
       <div class="flex flex-col justify-center items-center space-y-2 pb-4">
