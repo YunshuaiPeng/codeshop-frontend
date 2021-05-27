@@ -73,6 +73,7 @@
             remember_me: this.remember_me,
           },
         })
+        this.$store.dispatch('cart/fetch')
       }
     },
   }
