@@ -99,5 +99,6 @@ export default {
     transition: "Vue-Toastification__fade",
     hideProgressBar: false,
     showCloseButtonOnHover: true,
+    position: 'bottom-right',
   }
 }
