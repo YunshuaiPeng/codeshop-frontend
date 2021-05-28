@@ -16,12 +16,10 @@ export default function({ $axios, redirect, store, $toast }) {
 
     switch (code) {
       case 401: // Unauthorized
-        store.$auth.logout() // 清除 cookie 等工作
         redirect('/login')
         break
 
       case 419: // laravel 中 csrf 验证错误时状态码是419
-        store.$auth.logout() // 清除 cookie 等工作
         window.location.reload()
         redirect('/login')
         break
