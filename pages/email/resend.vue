@@ -14,12 +14,10 @@
         邮箱验证连接已经发送到 <strong>{{ auth.user.email }}</strong>，请查收。如果没有收到邮件，点击下方的按钮重新发送。
       </p>
       <form class="space-y-6 mt-8" @submit.prevent="resend">
-        <Loading>
-          <button type="submit" :disabled="disabled"
-            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400">
-            {{ text }}
-          </button>
-        </Loading>
+        <button type="submit" :disabled="disabled"
+          class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400">
+          {{ text }}
+        </button>
       </form>
     </div>
   </div>

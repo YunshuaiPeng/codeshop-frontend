@@ -24,8 +24,6 @@ export default {
     // 对 axios 做一些工作，例如增加拦截器，处理错误等
     '~/plugins/axios',
     '~/plugins/clickaway',
-    // 监听全局点击事件，(.client 表示只在客户端运行)
-    '~/plugins/listen-click.client.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -99,5 +97,6 @@ export default {
     transition: "Vue-Toastification__fade",
     hideProgressBar: false,
     showCloseButtonOnHover: true,
+    position: 'bottom-right',
   }
 }
