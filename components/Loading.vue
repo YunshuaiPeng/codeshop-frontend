@@ -1,6 +1,6 @@
 <template>
-  <div ref="loading" class="relative">
-    <div v-if="showAnimateSpin" class="absolute inset-0 flex items-center justify-center z-10 bg-white opacity-75">
+  <div v-if="show" class="fixed inset-0 flex items-center justify-center z-10 bg-transparent">
+    <div class="w-16 h-16 -mt-24 rounded-lg opacity-50 flex justify-center items-center bg-black text-white">
       <svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
         <path class="opacity-75" fill="currentColor"
@@ -8,30 +8,24 @@
         </path>
       </svg>
     </div>
-    <slot />
   </div>
 </template>
 
 <script>
-  import { mapState } from 'vuex'
-
   export default {
     data() {
       return {
-        showAnimateSpin: false
+        show: false
       }
     },
     watch: {
       '$store.state.request.count': _.debounce(function(newVal, oldVal) {
-        this.syncShowAnimateSpin(newVal)
+        this.sync(newVal)
       }, 1000),
     },
     methods: {
-      syncShowAnimateSpin(count) {
-        this.showAnimateSpin = count > 0 && this.containsTarget()
-      },
-      containsTarget() {
-        return this.$refs.loading && this.$refs.loading.contains(this.$store.state.request.target)
+      sync(requestingCount) {
+        this.show = requestingCount > 0
       },
     }
   }
