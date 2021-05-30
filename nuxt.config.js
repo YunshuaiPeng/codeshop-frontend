@@ -98,5 +98,9 @@ export default {
     hideProgressBar: false,
     showCloseButtonOnHover: true,
     position: 'bottom-right',
-  }
+  },
+
+  publicRuntimeConfig: {
+    BASE_URL: process.env.BASE_URL || 'http://localhost:3000',
+  },
 }

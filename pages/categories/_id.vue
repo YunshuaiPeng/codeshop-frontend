@@ -28,18 +28,27 @@
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 md:grid-cols-3 md:gap-8">
       <div v-for="(product, index) in category.products"
         class="relative flex flex-col justify-between border border-gray-200 rounded-lg focus:outline-none">
-        <div class="rounded-t-lg overflow-hidden">
+
+        <NuxtLink :to="/products/+product.id" class="flex-grow rounded-t-lg overflow-hidden focus:outline-none">
           <img :src="product.preview.desktop[0]" alt="product.name" class="rounded-t-lg">
-        </div>
+        </NuxtLink>
+
         <div class="p-6">
-          <h3 class="text-lg font-medium">
-            <NuxtLink :to="/products/+product.id" class="focus:outline-none">
-              <span class="absolute inset-0" aria-hidden="true"></span>
-              {{ product.name }}
-            </NuxtLink>
-          </h3>
-          <div class="text-lg text-red-700 font-medium col-span-2">
-            ¥ {{ product.price }}
+          <div class="flex justify-between items-center">
+            <div>
+              <h3 class="text-lg font-medium">
+                <NuxtLink :to="/products/+product.id" class="focus:outline-none">
+                  {{ product.name }}
+                </NuxtLink>
+              </h3>
+              <div class="text-lg text-red-700 font-medium col-span-2">
+                ¥ {{ product.price }}
+              </div>
+            </div>
+            <button @click="addToCart(product)"
+              class="hidden md:block w-24 h-8 flex justify-center py-1 px-3 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400">
+              加入购物车
+            </button>
           </div>
         </div>
       </div>
@@ -55,5 +64,13 @@
       const { data } = await $axios.get('/api/categories/' + params.id)
       return { category: data }
     },
+
+    methods: {
+      addToCart(product) {
+        this.$store.dispatch('cart/add', {
+          productIds: [product.id]
+        })
+      }
+    }
   }
 </script>
