@@ -22,11 +22,17 @@
       '$store.state.request.count': _.debounce(function(newVal, oldVal) {
         this.sync(newVal)
       }, 1000),
+      $route(to, from) {
+        this.hidden()
+      }
     },
     methods: {
       sync(requestingCount) {
         this.show = requestingCount > 0
       },
+      hidden() {
+        this.show = false
+      }
     }
   }
 </script>
