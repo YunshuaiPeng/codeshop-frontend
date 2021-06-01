@@ -8,7 +8,7 @@
       </svg>
     </NuxtLink>
     <span v-if="cart && cart.items.length"
-      class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white rounded-full border border-2 border-white text-xs inline-flex items-center justify-center p-1">
+      class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white rounded-full border border-2 border-white text-xs inline-flex items-center justify-center p-1 cursor-pointer">
       {{ cart.items.length }}
     </span>
   </div>
