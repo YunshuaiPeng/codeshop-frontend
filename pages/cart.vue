@@ -3,7 +3,7 @@
     <div class="bg-white">
       <div class="px-4 py-5 sm:px-6 border border-gray-200 rounded-t-lg">
         <h3 class="text-lg leading-6 font-medium text-gray-900">
-          购物清单
+          购物车
         </h3>
       </div>
     </div>
@@ -68,9 +68,9 @@
             </div>
           </div>
           <div class="col-span-1 flex items-center justify-center">
-            <button
-              class="w-16 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400">
-              结算
+            <button @click="checkout"
+              class="w-24 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400">
+              提交订单
             </button>
           </div>
         </div>
@@ -86,7 +86,7 @@
     computed: {
       ...mapState('cart', ['cart']),
 
-      ...mapGetters('cart', ['checkedCount', 'totalAmount', 'allChecked']),
+      ...mapGetters('cart', ['checkedCount', 'totalAmount', 'allChecked', 'checkedItems']),
     },
 
     methods: {
@@ -98,7 +98,28 @@
       },
       deleteItem(itemId) {
         this.$store.dispatch('cart/deleteItem', { itemId })
+      },
+      deleteItemLocally(itemId) {
+        this.$store.dispatch('cart/deleteItemLocally', { itemId })
+      },
+      async checkout() {
+        const payload = {
+          'cart_items': this.checkedItems.map(item => item.id),
+          'amount': this.totalAmount
+        }
+
+        const order = await this.$axios.$post('/api/orders', payload)
+
+        this.$router.push('/mock-payments/' + order.payment.identifier)
+
+        for (const item of this.checkedItems) {
+          this.deleteItemLocally(item.id)
+        }
+
       }
     }
   }
+</script>
+</script>
+</script>
 </script>

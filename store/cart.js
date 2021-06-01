@@ -12,7 +12,8 @@ export const getters = {
   },
 
   totalAmount(state, getters) {
-    return getters.checkedItems.reduce((carry, item) => carry + item.product.price, 0).toFixed(2)
+    let totalAmount = getters.checkedItems.reduce((carry, item) => carry + item.product.price, 0).toFixed(2)
+    return Number(totalAmount)
   },
 
   allChecked(state, getters) {
@@ -64,4 +65,23 @@ export const actions = {
     await this.$axios.delete('/api/cart-items/' + payload.itemId)
     commit('deleteItem', payload)
   },
+
+  async deleteItemLocally({ commit }, payload) {
+    commit('deleteItem', payload)
+  },
+
+  // async createOrder({ commit, getters }) {
+  //   const payload = {
+  //     'cart_items': getters.checkedItems.map(item => item.id),
+  //     'amount': getters.totalAmount
+  //   }
+
+  //   const order = await this.$axios.$post('/api/orders', payload)
+
+  //   for (const item of getters.checkedItems) {
+  //     commit('deleteItem', { itemId: item.id })
+  //   }
+
+  //   console.log(order)
+  // },
 }

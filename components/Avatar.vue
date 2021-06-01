@@ -51,12 +51,12 @@
       </div>
 
       <div>
-        <a href="#"
+        <NuxtLink to="/orders"
           class="text-gray-700 block w-full px-4 py-2 inline-flex items-center space-x-3 text-sm hover:bg-gray-100 focus:outline-none"
           role="menuitem" tabindex="-1">
           <Logo class="h-5 w-5"></Logo>
           <span>订单管理</span>
-        </a>
+        </NuxtLink>
         <form @submit.prevent="logout">
           <button type="submit"
             class="text-gray-700 block w-full inline-flex items-center space-x-3 text-left px-4 py-2 text-sm  hover:bg-gray-100 focus:outline-none"
