@@ -9,7 +9,11 @@
     </div>
 
     <div class="border-l border-r border-gray-200 py-6 space-y-6">
-      <div v-for="(item, index) in cart.items" class="grid grid-cols-6 h-24 lg:h-32">
+      <div v-if="!cart.items.length" class="h-24 lg:h-32 flex justify-center items-center">
+        <span class="text-gray-500">没有商品，</span>
+        <NuxtLink to="/" class="hover:text-blue-500">去选购</NuxtLink>
+      </div>
+      <div v-if="cart.items.length" v-for="(item, index) in cart.items" class="grid grid-cols-6 h-24 lg:h-32">
         <label class="block col-span-1 flex justify-center items-center cursor-pointer">
           <input type="checkbox" class="text-blue-500 h-6 w-6 rounded-full cursor-pointer" :checked="item.checked"
             @change="toggleChecked(item.id)">
